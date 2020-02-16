@@ -9,5 +9,19 @@ pipeline {
         sh 'make build'
       }
     }
+
+    stage('Test') {
+      steps {
+        echo 'Testing application...'
+        sh 'make test'
+      }
+    }
+  }
+
+  post {
+    always {
+      echo 'Publishing test results...'
+      junit '**/target/surefire-reports/*.xml'
+    }
   }
 }
