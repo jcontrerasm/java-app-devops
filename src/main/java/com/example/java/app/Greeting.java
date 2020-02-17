@@ -10,7 +10,7 @@ public class Greeting {
 
 	@GetMapping
 	public String hello() {
-		return "Hello World!";
+		return "Nada es imposible para una mente dispuesta.";
 	}
-	
+
 }

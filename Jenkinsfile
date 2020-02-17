@@ -30,6 +30,13 @@ pipeline {
         sh 'make publish'
       }
     }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploying application...'
+        sh 'make deploy'
+      }
+    }
   }
 
   post {
